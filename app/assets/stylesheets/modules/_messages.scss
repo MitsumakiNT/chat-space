@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     &--box{
+      color: white;
       width: 260px;
       height: 20px;
       margin: 0 20px;
@@ -43,6 +44,7 @@
       &__name{
         width: 260px;
         font-size: 15px;
+        color: white;
         margin: 0px 20px 5px 20px;
         padding: 20px 0px 0px 0px;
       }
@@ -144,7 +146,6 @@
     padding: 20px 40px;
     display: flex;
     .input-box{
-      display: flex;
       width: calc(100vw - 500px);
       &__text{
         height: 50px;
@@ -152,7 +153,9 @@
         border-style: none;
         padding: 0 0px 0 10px;
       }
-      &__image{
+      .form-image{
+        display: flex;
+        &__parts{
         background-color: white;
         top: 10px;
         cursor: pointer;
@@ -160,18 +163,19 @@
         padding-left: 18px;
         padding-top: 15px;
         padding-right: 15px;
-        &__file{
-          display: none;
+          &__file{
+            display: none;
+          }
         }
+      }   
+    }
+      .submit-btn{
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        background-color: #38aef0;
+        color: #fafafa;
+        cursor: pointer;
       }
-    }
-    .submit-btn{
-      width: 100px;
-      height: 50px;
-      padding: 0 30px;
-      background-color: #38aef0;
-      color: #fafafa;
-      cursor: pointer;
-    }
   }
 }
