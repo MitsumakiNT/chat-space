@@ -1,21 +1,24 @@
 .chat-main
   .chat-main__info
     .chat-main__info__left-box
-      .chat-main__info__left-box__name  test
-      .chat-main__info__left-box__members member:masa
+      .chat-main__info__left-box__name
+        =@group.name
+      .chat-main__info__left-box__members
+        - @members.each do |member|
+          = member.name
     .chat-main__info__right-box
-      .chat-main__info__right-box__btn　Edit
-      = link_to '', class: 'btnbtn'
+      .chat-main__info__right-box__btn
+        = link_to 'Edit', edit_group_path(params[:group_id])
   .chat-main__message
-    .chat-main__message__ability
-      .chat-main__message__ability__name masa
-      .chat-main__message__ability__dates 2019/01/03   
-    .chat-main__message__text おはよう
+    = render @messages
   .chat-main__form
-    %form.message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "何か入力してください"}
-        %label{class: "input-box__image"}
-          = icon('fab', 'instagram')
-          %input{type: "file", class: "input-box__image__file"}
-    %input{type: "submit", class: "submit-btn"}
+    .input-box
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'input-box__text' , placeholder: '何か入力してください'
+        .form-image
+          = f.label :image, class: 'input-box__parts' do
+            = icon('fab', 'instagram', class: 'icon')
+            = f.file_field :image, class: "input-box__parts__file"
+        .form-button
+        = f.submit 'Send', class: "submit-btn"
+    
