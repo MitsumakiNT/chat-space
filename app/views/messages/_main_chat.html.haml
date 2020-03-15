@@ -8,17 +8,14 @@
           = member.name
     .chat-main__info__right-box
       .chat-main__info__right-box__btn
-        = link_to 'Edit', edit_group_path(params[:group_id])
+        = link_to 'Edit' , edit_group_path(params[:group_id]) , class:"editter"
   .chat-main__message
     = render @messages
-  .chat-main__form
-    .input-box
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'input-box__text' , placeholder: '何か入力してください'
-        .form-image
-          = f.label :image, class: 'input-box__parts' do
-            = icon('fab', 'instagram', class: 'icon')
-            = f.file_field :image, class: "input-box__parts__file"
-        .form-button
-        = f.submit 'Send', class: "submit-btn"
-    
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: '何か入力してください'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

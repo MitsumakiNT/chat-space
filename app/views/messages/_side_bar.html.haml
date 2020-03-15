@@ -4,14 +4,14 @@
       = current_user.name
       .side-bar__user-name--box__left 
       .side-bar__user-name--box__right
-      = link_to new_group_path do
+      = link_to new_group_path, class:"leftbtn" do
         = icon('fas', 'edit', class: 'left-icon')
-      = link_to edit_user_path(current_user) do
+      = link_to edit_user_path(current_user), class:"rightbtn" do
         = icon('fas', 'cog', class: 'right-icon')
   .side-bar__group-list
     - current_user.groups.each do |group|
       .side-bar__group-list__group-members 
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group), class:"deco" do
           .side-bar__group-list__group-members__name 
             = group.name
           .side-bar__group-list__group-members__message 

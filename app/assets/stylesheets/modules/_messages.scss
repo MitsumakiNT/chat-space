@@ -10,6 +10,7 @@
 .side-bar {
   width: 300px;
   background-color: #253141;
+
   &__user-name {
     height: 100px;
     display: flex;
@@ -28,8 +29,18 @@
         line-height: center;
       }
       &__right{
+        text-decoration: none;
+        color: white;
         width: 60px;
         text-align: right;
+        padding-left: 5px;
+      }
+      .leftbtn{
+        color: white;
+      }
+      .rightbtn{
+        color: white;
+        padding-left: 5px;
       }
     }
   }
@@ -41,6 +52,10 @@
     &__group-members{
       height: 91px;
       color: white;
+      .deco{
+        color: white;
+        text-decoration: none;
+      }
       &__name{
         width: 260px;
         font-size: 15px;
@@ -113,7 +128,11 @@
         cursor: pointer;
         text-align: center;
         line-height: 40px;
-        padding-right: 15px;
+        padding-right: 5px;
+      }
+      .editter{
+        color: #38aef0;
+        text-decoration: none;
       }
     }
   }
@@ -140,42 +159,41 @@
       font-size: 14px;
     }
   }
-  &__form{
+  .form {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
     height: 90px;
-    background-color: #d2d2d2;
-    padding: 20px 40px;
-    display: flex;
-    .input-box{
-      width: calc(100vw - 500px);
-      &__text{
-        height: 50px;
-        width: calc(100vw - 550px);
-        border-style: none;
-        padding: 0 0px 0 10px;
-      }
-      .form-image{
-        display: flex;
-        &__parts{
-        background-color: white;
-        top: 10px;
-        cursor: pointer;
-        font-size: 15px;
-        padding-left: 18px;
-        padding-top: 15px;
-        padding-right: 15px;
-          &__file{
-            display: none;
-          }
-        }
-      }   
+    padding: 20px 50px 20px 40px;
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
     }
-      .submit-btn{
-        width: 100px;
-        height: 50px;
-        padding: 0 30px;
-        background-color: #38aef0;
-        color: #fafafa;
+    &__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
         cursor: pointer;
       }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
+      background-color: $light_blue;
+      border: none;
+      color: $white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+      cursor: pointer;
+    }
   }
 }
