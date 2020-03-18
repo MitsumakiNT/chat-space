@@ -78,7 +78,7 @@ $(function(){
       
     })
     .fail(function(data){
-      alert('エラー');
+      alert('エラーですよ');
     });
   })
   var reloadMessages = function() {
