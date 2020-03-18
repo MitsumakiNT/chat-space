@@ -70,6 +70,7 @@ gem 'haml-rails'
 gem "font-awesome-sass"
 gem "devise"
 gem "pry-rails"
+gem "fog-aws"
 
 
 gem "carrierwave", "~> 2.0"
