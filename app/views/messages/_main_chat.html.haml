@@ -2,10 +2,10 @@
   .chat-main__info
     .chat-main__info__left-box
       .chat-main__info__left-box__name
-        =@group.name
-      .chat-main__info__left-box__members
-        - @members.each do |member|
-          = member.name
+        = @group.name
+      .chat-main__info__left-box__members  
+        - @members.each do |member| 
+          = member.name 
     .chat-main__info__right-box
       .chat-main__info__right-box__btn
         = link_to 'Edit' , edit_group_path(params[:group_id]) , class:"editter"
