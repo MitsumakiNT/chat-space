@@ -105,10 +105,16 @@
         color: #333333;
         font-size: 20px;
       }
-      &__members{
+      .menbox{
         padding-top: 15px;
         color: #999999;
         font-size: 12px;
+        display: flex;
+        &__namae{
+          padding-right: 5px;
+        }
+        &__members{
+        }
       }
     }
     &__right-box{
